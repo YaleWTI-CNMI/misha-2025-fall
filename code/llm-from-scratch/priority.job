@@ -1,0 +1,8 @@
+#!/bin/bash
+
+#SBATCH -p gpu 
+##SBATCH --gpus=a100:1
+#SBATCH --gpus=l40s:1
+#SBATCH --qos=qos_test2
+
+sleep 60

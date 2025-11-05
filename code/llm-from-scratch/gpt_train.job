@@ -1,0 +1,12 @@
+#!/bin/bash 
+#SBATCH -p gpu 
+#SBATCH --time=1:00:00
+##SBATCH --gpus=a100:1 
+#SBATCH --gpus=l40s:1  --gpus-per-node=l40s:1
+#SBATCH -n 1 --ntasks-per-node=1 
+#SBATCH --requeue
+#SBATCH --qos=qos_test
+
+module load miniconda
+conda activate ../../conda_env
+srun python gpt_train.py
